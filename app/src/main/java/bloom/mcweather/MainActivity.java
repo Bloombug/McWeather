@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         firstEditLatitude = findViewById(R.id.firstEdit);
+        firstEditLatitude.requestFocus();
 
         weatherData = findViewById(R.id.textView);
 
