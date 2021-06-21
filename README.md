@@ -1,5 +1,5 @@
 # McWeather
-A simple weather app using OpenWeather's API
+A simple weather app using OpenWeatherMap's API
 
 I did this app to play around with API's and Retrofit, and i believe it is a neat little app!
 
