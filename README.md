@@ -1,6 +1,8 @@
 # McWeather
 A simple weather app using OpenWeatherMap's API
 
+![Alt text](screen.png?raw=true "Screenshot of the application when asked to search for the weather in Berlin, Germany")
+
 I did this app to play around with API's and Retrofit, and i believe it is a neat little app!
 
 It allows you to check on the weather in your country, mainly the temperature (as registered by the API), 
