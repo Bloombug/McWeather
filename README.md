@@ -1,8 +1,6 @@
 # McWeather
 A simple weather app using OpenWeatherMap's API
 
-<img src="screen.png" align="right" width="350" height="650">
-
 I did this app to play around with API's and Retrofit, and i believe it is a neat little app!
 
 It allows you to check on the weather in your country, mainly the temperature (as registered by the API), 
