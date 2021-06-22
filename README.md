@@ -1,7 +1,7 @@
 # McWeather
 A simple weather app using OpenWeatherMap's API
 
-![Alt text](screen.png?raw=true "Screenshot of the application when asked to search for the weather in Berlin, Germany" ! width = 100 | height = 100)
+![Alt text](screen.png?raw=true "Screenshot of the application when asked to search for the weather in Berlin, Germany" = 250x250)
 
 I did this app to play around with API's and Retrofit, and i believe it is a neat little app!
 
