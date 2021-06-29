@@ -16,12 +16,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.IOException;
 import java.io.InputStream;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.*;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         mainView = findViewById(R.id.mainScreen);
         root = mainView.getRootView();
 
+
         manager = getAssets();
 
         weatherImage = findViewById(R.id.weather_map_view);
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                             weatherData.setTextColor(Color.parseColor("#FFFFFF"));
                             weatherImage.setImageBitmap(rainyBitmap);
                             estimativeWeather = "Quite likely to rain";
-                        } else if (weatherResponse.main.humidity > 15 || weatherResponse.main.humidity < 45){
+                        } else if (weatherResponse.main.humidity > 15 && weatherResponse.main.humidity < 45 && weatherResponse.main.temp < 12){
                             weatherData.setTextColor(Color.parseColor("#000000"));
                             weatherImage.setImageBitmap(cloudyBitmap);
                             estimativeWeather = "Likely to be cloudy";
@@ -139,16 +142,16 @@ public class MainActivity extends AppCompatActivity {
                             city +
                             "\n\n" +
                             "Average Temp. : " +
-                            String.format("%.01f", (convertFahrenheitToCelsius(weatherResponse.main.temp) / 10)) +
+                            String.format("%s", (int)weatherResponse.main.temp) +
                             " ºC\n" +
                             "Temperature (Min) : " +
-                            String.format("%.01f", (convertFahrenheitToCelsius(weatherResponse.main.temp_min) / 10)) +
+                            String.format("%s", (int)(weatherResponse.main.temp_min) +
                             " ºC\n" +
                             "Temperature (Max) : " +
-                            String.format("%.01f", (convertFahrenheitToCelsius(weatherResponse.main.temp_max) / 10)) +
+                            String.format("%s", (int)weatherResponse.main.temp_max) +
                             " ºC\n\n" +
-                            "Humidity : " + weatherResponse.main.humidity + "%\n(" + estimativeWeather  + ")" +
-                            "\n\n";
+                            "Humidity : " + (int)weatherResponse.main.humidity + "%\n\n(" + estimativeWeather  + ")" +
+                            "\n\n");
 
                     weatherData.setText(stringBuilder);
                 }
